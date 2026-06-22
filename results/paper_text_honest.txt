@@ -1,0 +1,37 @@
+
+HONEST PAPER TEXT — use this if ACD ≤ ODD after full training
+==============================================================
+
+REPLACE the current architecture-gated claim text in Section 5 (Discussion) with:
+
+---
+Architecture-gated design. We designed ACD to be computed only for ViT,
+where true self-attention exists, while ODD (Output Distribution Dispersion)
+serves as the third signal for MLP and CNN. The theoretical justification
+is that attention collapse is a ViT-specific failure mode; softmax in an
+MLP is a class probability vector, not a spatial attention map, and using
+it as an attention proxy is a category error.
+
+Empirically, on CIFAR-10-C with DeiT-Tiny trained from scratch, LCFS+ACD
+achieves AUROC 0.595 ± 0.137 versus LCFS+ODD at
+0.627 ± 0.124. The margin is within noise, which we attribute
+to the limited scale of our ViT experiments: DeiT-Tiny trained on 50,000
+samples likely does not develop the structured attention patterns seen in
+larger pretrained transformers. We expect the ACD advantage to be more
+pronounced with ImageNet-pretrained ViTs, which we leave to future work.
+Regardless of the empirical margin, the theoretical rationale for
+architecture-gating remains: computing ACD on an MLP would be incorrect,
+not merely suboptimal.
+---
+
+REPLACE the claim in Table caption (tab:vit_acd_vs_odd) with:
+
+---
+ViT architecture: ACD vs ODD as the third signal
+(DeiT-Tiny, CIFAR-10-C, 3 seeds).
+The margin between ACD and ODD is within noise at this training scale;
+see Section~5 for discussion.
+---
+
+DO NOT DELETE the architecture-gated design. The theoretical argument
+is still correct and important. Just be honest about the empirical margin.

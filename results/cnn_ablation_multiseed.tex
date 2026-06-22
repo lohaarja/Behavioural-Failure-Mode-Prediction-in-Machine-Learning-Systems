@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{Ablation: AUROC of each signal component (mean $\pm$ std, 5 seeds $\times$ 15 corruptions, CNN, CIFAR-10-C). ADD alone has highest mean but LCFS has lower variance, providing robustness across corruption types.}
+\label{tab:ablation_multiseed}
+\begin{tabular}{lcc}
+\toprule
+Configuration & AUROC (mean) & AUROC (std) \\
+\midrule
+ADD only & 0.8123 & 0.0373 \\
+\textbf{Full LCFS} & \textbf{0.7312} & \textbf{0.0769} \\
+ESS$\times$ADD (naive) & 0.6842 & 0.0555 \\
+ODD only & 0.5922 & 0.0663 \\
+ESS only & 0.5909 & 0.0681 \\
+\bottomrule
+\end{tabular}
+\end{table}

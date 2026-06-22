@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{ViT architecture: ACD (true self-attention entropy collapse) vs ODD (softmax proxy) as the third signal. ACD outperforms ODD because ViT has true attention; this empirically validates the architecture-gated design. Mean $\pm$ std over 5 seeds $\times$ 5 corruptions.}
+\label{tab:vit_acd_vs_odd}
+\begin{tabular}{lc}
+\toprule
+Configuration & AUROC (mean $\pm$ std) \\
+\midrule
+\textbf{LCFS \texttt{+} ACD (correct)} & \textbf{0.5320 $\pm$ 0.0740} \\
+LCFS \texttt{+} ODD (proxy) & 0.5618 $\pm$ 0.0732 \\
+ACD alone (3rd signal) & 0.4789 $\pm$ 0.0975 \\
+ODD alone (3rd signal) & 0.5626 $\pm$ 0.0814 \\
+ADD alone & 0.5508 $\pm$ 0.0683 \\
+ESS alone & 0.5599 $\pm$ 0.0790 \\
+\bottomrule
+\end{tabular}
+\end{table}

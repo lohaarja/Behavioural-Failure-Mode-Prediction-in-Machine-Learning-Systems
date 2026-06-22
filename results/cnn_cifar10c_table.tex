@@ -1,0 +1,15 @@
+\begin{table}[ht]
+\centering
+\caption{Failure detection (CNN, cifar10c, 5 seeds).}
+\label{tab:main}
+\begin{tabular}{lcc}
+\toprule
+Method & AUROC & AUPR \\
+\midrule
+BFMP/LCFS (ours) & \textbf{0.786$\pm$0.030} & \textbf{0.981$\pm$0.005} \\
+MC Dropout & 0.552$\pm$0.091 & 0.946$\pm$0.020 \\
+ODIN & 0.535$\pm$0.028 & 0.943$\pm$0.019 \\
+Autoencoder & 0.526$\pm$0.031 & 0.944$\pm$0.009 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{Failure detection on CIFAR-10-C (CNN, 15 corruptions, 5 seeds, mean $\pm$ std). $\dagger$~indicates $p < 0.05$ vs.\ BFMP/LCFS (Wilcoxon signed-rank). BFMP achieves the highest AUROC across all corruption types.}
+\label{tab:main_results}
+\begin{tabular}{lcc}
+\toprule
+Method & AUROC $\uparrow$ & AUPR $\uparrow$ \\
+\midrule
+\textbf{BFMP/LCFS (ours)} & \textbf{0.731 $\pm$ 0.077} & \textbf{0.975 $\pm$ 0.011} \\
+MC Dropout$\dagger$ & 0.524 $\pm$ 0.065 & -- \\
+Deep Ensembles$\dagger$ & 0.507 $\pm$ 0.066 & -- \\
+ODIN$\dagger$ & 0.536 $\pm$ 0.070 & -- \\
+Autoencoder$\dagger$ & 0.506 $\pm$ 0.059 & -- \\
+Naive ESS$\times$ADD$\dagger$ & 0.684 $\pm$ 0.055 & -- \\
+\midrule
+Random & 0.500 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

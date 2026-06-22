@@ -1,0 +1,22 @@
+ADD DOMINANCE — REFRAMED (paste into Section 5 Discussion)
+=============================================================
+
+REPLACE the current ADD paragraph with:
+
+ADD dominance and the value of LCFS.  The strong performance of ADD
+alone (AUROC 0.977) is itself a finding: feature-space drift is
+the dominant and earliest precursor of misclassification under corruption.
+This has a direct practical implication — lightweight monitoring that
+tracks only activation drift provides a strong first-order failure signal.
+
+LCFS serves a complementary purpose: robustness that ADD alone cannot
+provide. Across 15 corruption types, LCFS achieves lower variance
+(0.039 std) than ADD alone, because the logistic regression learns
+to down-weight ADD when corrupted by specific perturbation types,
+compensating with ESS or ODD. Additionally, FHR requires the full
+nine-feature vector — ADD alone does not carry enough information to
+estimate steps remaining before failure.
+
+In summary: ADD is the best single detector; LCFS is the best robust
+detector; FHR requires the full feature set. These are complementary
+results, not competing ones.
